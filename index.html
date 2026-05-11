@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Stevie Schapiro</title>
+  <meta name="description" content="Dr. Stevie Schapiro — welcome to my corner of the internet." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:   #FAF8F4;
+      --sage:    #8BA888;
+      --sage-lt: #C8D9C6;
+      --ink:     #2C2C2C;
+      --mid:     #6B6B6B;
+      --rule:    #E4DDD5;
+      --white:   #FFFFFF;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--cream);
+      border-bottom: 1px solid var(--rule);
+      padding: 0 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--sage); }
+
+    /* hamburger */
+    .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-toggle span {
+      display: block; width: 22px; height: 1.5px;
+      background: var(--ink); margin: 5px 0; transition: 0.3s;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: calc(100vh - 64px);
+      align-items: center;
+      gap: 4rem;
+      padding: 6rem 8%;
+    }
+
+    .hero-text h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-text h1 em {
+      font-style: italic;
+      color: var(--sage);
+    }
+
+    .hero-text p {
+      font-size: 1.05rem;
+      color: var(--mid);
+      max-width: 38ch;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.85rem 2.25rem;
+      border: 1.5px solid var(--sage);
+      color: var(--sage);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.25s, color 0.25s;
+    }
+
+    .btn:hover {
+      background: var(--sage);
+      color: var(--white);
+    }
+
+    .btn-filled {
+      background: var(--sage);
+      color: var(--white);
+    }
+
+    .btn-filled:hover {
+      background: #7a9777;
+      border-color: #7a9777;
+    }
+
+    .hero-image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .photo-frame {
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 3/4;
+      background: var(--sage-lt);
+      border-radius: 2px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      color: var(--mid);
+    }
+
+    .photo-frame svg { opacity: 0.5; }
+
+    .photo-frame p {
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.7;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 0 8%;
+    }
+
+    /* ── QUOTE ── */
+    .quote-section {
+      padding: 6rem 8%;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .quote-section blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+    }
+
+    .quote-section cite {
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid);
+      font-style: normal;
+    }
+
+    /* ── ABOUT ── */
+    .about-section {
+      padding: 6rem 8%;
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 1.25rem;
+    }
+
+    .about-left h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 300;
+      line-height: 1.25;
+    }
+
+    .about-right p {
+      color: var(--mid);
+      margin-bottom: 1.25rem;
+    }
+
+    .about-right p:last-child { margin-bottom: 0; }
+
+    /* ── CREDENTIALS ── */
+    .creds-section {
+      background: var(--ink);
+      padding: 5rem 8%;
+    }
+
+    .creds-section .section-label { color: var(--sage-lt); }
+
+    .creds-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+
+    .cred-item h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+
+    .cred-item p {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+    }
+
+    .cred-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 300;
+      color: var(--sage);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── CONTACT ── */
+    .contact-section {
+      padding: 7rem 8%;
+      text-align: center;
+    }
+
+    .contact-section .section-label { text-align: center; }
+
+    .contact-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      font-weight: 300;
+      margin-bottom: 1.25rem;
+    }
+
+    .contact-section p {
+      color: var(--mid);
+      max-width: 42ch;
+      margin: 0 auto 2.5rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 2.5rem 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--mid);
+    }
+
+    footer a { color: var(--mid); text-decoration: none; }
+    footer a:hover { color: var(--sage); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--cream); padding: 1.5rem 5%; border-bottom: 1px solid var(--rule); gap: 1.25rem; }
+      .nav-links.open { display: flex; }
+      .nav-toggle { display: block; }
+
+      .hero { grid-template-columns: 1fr; padding: 3rem 6%; min-height: auto; gap: 2.5rem; }
+      .hero-image { order: -1; }
+      .photo-frame { max-width: 280px; aspect-ratio: 1/1; border-radius: 50%; margin: 0 auto; }
+
+      .about-section { grid-template-columns: 1fr; gap: 2rem; padding: 4rem 6%; }
+
+      .creds-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .creds-section { padding: 4rem 6%; }
+
+      .contact-section, .quote-section { padding: 4rem 6%; }
+
+      footer { flex-direction: column; gap: 0.75rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Dr. Stevie Schapiro</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="this.nextElementSibling.classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#credentials">Background</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Hi, I'm<br /><em>Dr. Stevie.</em></h1>
+      <p>Welcome to my little corner of the internet. I'm so glad you're here — let's connect.</p>
+      <a href="#contact" class="btn btn-filled">Say Hello</a>
+    </div>
+    <div class="hero-image">
+      <div class="photo-frame">
+        <!-- Replace with: <img src="photo.jpg" alt="Dr. Stevie Schapiro" style="width:100%;height:100%;object-fit:cover;" /> -->
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#8BA888" stroke-width="1.2">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+        </svg>
+        <p>Photo coming soon</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- QUOTE -->
+  <section class="quote-section">
+    <blockquote>
+      "The good physician treats the disease;<br />the great physician treats the patient."
+    </blockquote>
+    <cite>— William Osler</cite>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- ABOUT -->
+  <section class="about-section" id="about">
+    <div class="about-left">
+      <p class="section-label">About</p>
+      <h2>A little about me</h2>
+    </div>
+    <div class="about-right">
+      <p>
+        I'm Dr. Stevie Schapiro — and yes, it still feels a little surreal to write that. After years of hard work, late nights, and a whole lot of coffee, I've officially earned my doctorate.
+      </p>
+      <p>
+        My work is driven by a genuine passion for patient care, curiosity about the science, and a deep belief that every person deserves to be treated with compassion and respect. I bring that same thoughtfulness to everything I do.
+      </p>
+      <p>
+        This site is just getting started — check back soon for more about my work, background, and what I'm up to next.
+      </p>
+      <br />
+      <a href="#contact" class="btn">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- CREDENTIALS -->
+  <section class="creds-section" id="credentials">
+    <p class="section-label">Background</p>
+    <div class="creds-grid">
+      <div class="cred-item">
+        <div class="cred-number">Dr.</div>
+        <h3>Doctorate</h3>
+        <p>Earned her doctoral degree — the culmination of years of rigorous study, research, and clinical training.</p>
+      </div>
+      <div class="cred-item">
+        <div class="cred-number">M.S.</div>
+        <h3>Master of Science</h3>
+        <p>Holds a Master of Science degree as part of her extensive academic and professional training.</p>
+      </div>
+      <div class="cred-item">
+        <div class="cred-number">∞</div>
+        <h3>Dedicated</h3>
+        <p>Committed to lifelong learning and bringing evidence-based, compassionate care to every patient and project.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <p class="section-label">Contact</p>
+    <h2>Let's connect.</h2>
+    <p>Whether you have a question, a collaboration idea, or just want to say hi — my inbox is always open.</p>
+    <a href="mailto:hello@doctorstevie.com" class="btn">hello@doctorstevie.com</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>© 2026 Dr. Stevie Schapiro</span>
+    <span>Built with love 🌿</span>
+  </footer>
+
+</body>
+</html>
