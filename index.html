@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dr. Stevie Schapiro — Clinical Psychologist</title>
   <meta name="description" content="Dr. Stevie Schapiro is a clinical psychologist specializing in neuropsychological assessment, trauma, and evidence-based therapy with veterans, children, and adults." />
+  <meta name="robots" content="noindex, nofollow" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -31,7 +32,6 @@
       line-height: 1.7;
     }
 
-    /* ── NAV ── */
     nav {
       position: sticky;
       top: 0;
@@ -75,7 +75,6 @@
     .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
     .nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--ink); margin: 5px 0; transition: 0.3s; }
 
-    /* ── HERO ── */
     .hero {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -159,10 +158,8 @@
     .photo-placeholder svg { opacity: 0.45; }
     .photo-placeholder p { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.6; }
 
-    /* ── DIVIDER ── */
     .divider { border: none; border-top: 1px solid var(--rule); margin: 0 8%; }
 
-    /* ── QUOTE ── */
     .quote-section {
       padding: 6rem 8%;
       text-align: center;
@@ -188,7 +185,6 @@
       font-style: normal;
     }
 
-    /* ── ABOUT ── */
     .about-section {
       padding: 6rem 8%;
       display: grid;
@@ -216,7 +212,6 @@
     .about-right p { color: var(--mid); margin-bottom: 1.25rem; }
     .about-right p:last-of-type { margin-bottom: 1.75rem; }
 
-    /* ── SPECIALTIES ── */
     .specialties-section {
       padding: 5rem 8%;
       background: #F3F0EB;
@@ -254,7 +249,6 @@
       line-height: 1.65;
     }
 
-    /* ── CREDENTIALS ── */
     .creds-section {
       background: var(--ink);
       padding: 5rem 8%;
@@ -292,7 +286,6 @@
       margin-bottom: 1rem;
     }
 
-    /* ── EXPERIENCE TIMELINE ── */
     .experience-section {
       padding: 6rem 8%;
     }
@@ -352,7 +345,6 @@
       max-width: 65ch;
     }
 
-    /* ── CONTACT ── */
     .contact-section {
       padding: 7rem 8%;
       text-align: center;
@@ -371,7 +363,6 @@
       margin: 0 auto 2.5rem;
     }
 
-    /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--rule);
       padding: 2.5rem 8%;
@@ -385,7 +376,6 @@
     footer a { color: var(--mid); text-decoration: none; }
     footer a:hover { color: var(--sage); }
 
-    /* ── RESPONSIVE ── */
     @media (max-width: 900px) {
       .creds-grid { grid-template-columns: repeat(2, 1fr); }
       .specialties-grid { grid-template-columns: 1fr 1fr; }
@@ -395,11 +385,9 @@
       .nav-links { display: none; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--cream); padding: 1.5rem 5%; border-bottom: 1px solid var(--rule); gap: 1.25rem; }
       .nav-links.open { display: flex; }
       .nav-toggle { display: block; }
-
       .hero { grid-template-columns: 1fr; padding: 3rem 6%; min-height: auto; gap: 2.5rem; }
       .hero-image { order: -1; }
       .photo-frame { max-width: 200px; aspect-ratio: 1/1; border-radius: 50%; margin: 0 auto; }
-
       .about-section { grid-template-columns: 1fr; gap: 2rem; padding: 4rem 6%; }
       .specialties-grid { grid-template-columns: 1fr; }
       .creds-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
@@ -416,7 +404,6 @@
 </head>
 <body>
 
-  <!-- NAV -->
   <nav>
     <a href="#" class="nav-logo">Dr. Stevie Schapiro</a>
     <button class="nav-toggle" aria-label="Menu" onclick="this.nextElementSibling.classList.toggle('open')">
@@ -430,7 +417,6 @@
     </ul>
   </nav>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-text">
       <p class="hero-tagline">Clinical Psychologist · Ph.D.</p>
@@ -447,7 +433,6 @@
 
   <hr class="divider" />
 
-  <!-- QUOTE -->
   <section class="quote-section">
     <blockquote>
       &ldquo;Each person's story deserves to be met with patience, curiosity, and genuine care.&rdquo;
@@ -457,47 +442,36 @@
 
   <hr class="divider" />
 
-  <!-- ABOUT -->
   <section class="about-section" id="about">
     <div class="about-left">
       <p class="section-label">About</p>
       <h2>A little<br />about me</h2>
     </div>
     <div class="about-right">
-      <p>
-        I'm a doctoral candidate in Clinical Psychology at Nova Southeastern University (Ph.D., 2026), currently completing my pre-doctoral internship at the U.S. Department of Veterans Affairs in St. Louis — an experience that has deepened my commitment to serving those who've given so much.
-      </p>
-      <p>
-        Over the past several years I've had the privilege of working with veterans, children, adolescents, and adults across a wide range of settings: VA medical centers, neuropsychology clinics, pediatric outpatient practices, and trauma-focused research labs. My training spans neuropsychological assessment, trauma-informed therapy, CBT, and evidence-based group interventions.
-      </p>
-      <p>
-        Before psychology found me (or I found it), I was at The George Washington University studying psychology, founding student organizations, and learning how to listen. That curiosity about people has never left me — it just got a lot more letters after its name.
-      </p>
+      <p>I'm a doctoral candidate in Clinical Psychology at Nova Southeastern University (Ph.D., 2026), currently completing my pre-doctoral internship at the U.S. Department of Veterans Affairs in St. Louis — an experience that has deepened my commitment to serving those who've given so much.</p>
+      <p>Over the past several years I've had the privilege of working with veterans, children, adolescents, and adults across a wide range of settings: VA medical centers, neuropsychology clinics, pediatric outpatient practices, and trauma-focused research labs. My training spans neuropsychological assessment, trauma-informed therapy, CBT, and evidence-based group interventions.</p>
+      <p>Before psychology found me (or I found it), I was at The George Washington University studying psychology, founding student organizations, and learning how to listen. That curiosity about people has never left me — it just got a lot more letters after its name.</p>
       <a href="#experience" class="btn">See My Background</a>
     </div>
   </section>
 
-  <!-- SPECIALTIES -->
   <section class="specialties-section" id="specialties">
     <p class="section-label">Areas of Focus</p>
     <div class="specialties-grid">
-
       <div class="specialty-card">
         <svg class="specialty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
           <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/>
         </svg>
         <h3>Neuropsychological Assessment</h3>
-        <p>Comprehensive evaluation of cognitive functioning — including memory, attention, executive function, and visuospatial abilities — for adults navigating TBI, epilepsy, Alzheimer's, multiple sclerosis, and more.</p>
+        <p>Comprehensive evaluation of cognitive functioning — including memory, attention, executive function, and visuospatial abilities — for adults navigating TBI, epilepsy, Alzheimer’s, multiple sclerosis, and more.</p>
       </div>
-
       <div class="specialty-card">
         <svg class="specialty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
         </svg>
         <h3>Trauma-Informed Care</h3>
-        <p>Extensive training in trauma assessment and treatment — including work at the VA's Trauma Resolution Integration Program (TRIP) and research with the National Child Traumatic Stress Network.</p>
+        <p>Extensive training in trauma assessment and treatment — including work at the VA’s Trauma Resolution Integration Program (TRIP) and research with the National Child Traumatic Stress Network.</p>
       </div>
-
       <div class="specialty-card">
         <svg class="specialty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
           <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
@@ -506,114 +480,111 @@
         <h3>Pediatric &amp; Adolescent Psychology</h3>
         <p>CBT, biofeedback, and psychoeducational group facilitation with children, teens, and families presenting with anxiety, depression, and autism spectrum disorder — through a developmental, family-centered lens.</p>
       </div>
-
     </div>
   </section>
 
-  <!-- CREDENTIALS -->
   <section class="creds-section" id="credentials">
     <p class="section-label">Credentials &amp; Training</p>
     <div class="creds-grid">
-
-      <div class="cred-item">
-        <div class="cred-dot"></div>
-        <h3>Ph.D. Clinical Psychology</h3>
-        <p>Nova Southeastern University · 2020–2026</p>
-      </div>
-
-      <div class="cred-item">
-        <div class="cred-dot"></div>
-        <h3>B.A. Psychology</h3>
-        <p>The George Washington University · 2016–2020</p>
-      </div>
-
-      <div class="cred-item">
-        <div class="cred-dot"></div>
-        <h3>VA Pre-Doctoral Intern</h3>
-        <p>U.S. Dept. of Veterans Affairs · St. Louis, 2025–present</p>
-      </div>
-
-      <div class="cred-item">
-        <div class="cred-dot"></div>
-        <h3>Neuropsychology Extern</h3>
-        <p>Memorial Neuroscience Institute (under Dr. Madily Broz) · 2024–2025</p>
-      </div>
-
+      <div class="cred-item"><div class="cred-dot"></div><h3>Ph.D. Clinical Psychology</h3><p>Nova Southeastern University · 2020–2026</p></div>
+      <div class="cred-item"><div class="cred-dot"></div><h3>B.A. Psychology</h3><p>The George Washington University · 2016–2020</p></div>
+      <div class="cred-item"><div class="cred-dot"></div><h3>VA Pre-Doctoral Intern</h3><p>U.S. Dept. of Veterans Affairs · St. Louis, 2025–present</p></div>
+      <div class="cred-item"><div class="cred-dot"></div><h3>Neuropsychology Extern</h3><p>Memorial Neuroscience Institute (under Dr. Madily Broz) · 2024–2025</p></div>
     </div>
   </section>
 
-  <!-- EXPERIENCE TIMELINE -->
   <section class="experience-section" id="experience">
     <p class="section-label">Experience</p>
     <div class="timeline">
-
       <div class="timeline-item">
         <p class="timeline-date">Jul 2025 – Present</p>
         <h3>Pre-Doctoral Intern</h3>
         <p class="timeline-org">U.S. Department of Veterans Affairs · St. Louis, MO</p>
         <p>Providing clinical services to veterans as part of an APA-accredited internship program at the VA.</p>
       </div>
-
       <div class="timeline-item">
         <p class="timeline-date">Aug 2024 – May 2025</p>
         <h3>Psychology Extern — Neuropsychology</h3>
         <p class="timeline-org">Memorial Neuroscience Institute · Hollywood, FL (under Dr. Madily Broz)</p>
-        <p>Administered and scored a full battery of neuropsychological assessments (intellectual functioning, memory, executive function, attention, motor skills, personality). Interviewed patients and wrote integrated reports for adults with epilepsy, TBI, Alzheimer's, MS, and vascular disease. Assisted in WADA test administration and attended interdisciplinary epilepsy case conferences.</p>
+        <p>Administered and scored a full battery of neuropsychological assessments (intellectual functioning, memory, executive function, attention, motor skills, personality). Interviewed patients and wrote integrated reports for adults with epilepsy, TBI, Alzheimer’s, MS, and vascular disease. Assisted in WADA test administration and attended interdisciplinary epilepsy case conferences.</p>
       </div>
-
       <div class="timeline-item">
         <p class="timeline-date">Aug 2023 – May 2025</p>
         <h3>Psychology Extern — Pediatric</h3>
         <p class="timeline-org">Pediatric Psychology Associates, South Florida · Miami-Fort Lauderdale (under Drs. Carella, Migoya &amp; del Castillo)</p>
         <p>Co-facilitated the SURF psychoeducational group (ages 6–22) targeting self-regulation, social-emotional skills, and executive functioning. Conducted cognitive and achievement evaluations (KTEA-3, WJ-IV, VMI). Provided individual CBT with biofeedback for children, adolescents, and families presenting with anxiety, depression, and autism spectrum disorder.</p>
       </div>
-
       <div class="timeline-item">
         <p class="timeline-date">Aug 2022 – Jun 2025</p>
         <h3>Childhood Trauma &amp; Bereavement Lab Coordinator</h3>
         <p class="timeline-org">Nova Southeastern University · under Dr. Christopher Layne, PhD</p>
         <p>Coordinated lab operations and contributed to development of the Core Curriculum on Childhood Trauma (CCCT) for the National Child Traumatic Stress Network.</p>
       </div>
-
       <div class="timeline-item">
         <p class="timeline-date">May 2022 – Sep 2024</p>
         <h3>Psychometrician</h3>
         <p class="timeline-org">Center for Psychological Growth and Wellness · under Dr. Lisa Saponaro</p>
         <p>Administered and scored psychological and neuropsychological assessments in an outpatient private practice setting.</p>
       </div>
-
       <div class="timeline-item">
         <p class="timeline-date">Aug 2021 – Aug 2022</p>
         <h3>Psychology Extern — VA</h3>
         <p class="timeline-org">Bruce W. Carter VA Medical Center · Miami-Fort Lauderdale (under Dr. Yesenia Rivera)</p>
-        <p>Delivered psychoeducation, individual therapy, group therapy, and psychological assessments at the Miami VA's Community Living Center.</p>
+        <p>Delivered psychoeducation, individual therapy, group therapy, and psychological assessments at the Miami VA’s Community Living Center.</p>
       </div>
-
       <div class="timeline-item">
         <p class="timeline-date">Aug 2021 – Sep 2024</p>
         <h3>Teaching Assistant</h3>
         <p class="timeline-org">Nova Southeastern University</p>
         <p>Supported doctoral-level graduate coursework — including instruction on APA 7 guidelines — and provided written feedback on student assignments.</p>
       </div>
-
     </div>
   </section>
 
   <hr class="divider" />
 
-  <!-- CONTACT -->
   <section class="contact-section" id="contact">
     <p class="section-label">Contact</p>
-    <h2>Let's connect.</h2>
-    <p>Whether you have a question, a collaboration idea, or just want to say hello — I'd love to hear from you.</p>
+    <h2>Let’s connect.</h2>
+    <p>Whether you have a question, a collaboration idea, or just want to say hello — I’d love to hear from you.</p>
     <a href="mailto:stevie@doctorstevie.com" class="btn btn-filled">stevie@doctorstevie.com</a>
   </section>
 
-  <!-- FOOTER -->
   <footer>
     <span>&copy; 2026 Dr. Stevie Schapiro, Ph.D.</span>
     <a href="https://www.linkedin.com/in/stevie-schapiro-ms-982208137/" target="_blank" rel="noopener">LinkedIn</a>
   </footer>
+
+  <!-- PASSWORD GATE -->
+  <div id="gate" style="display:flex;position:fixed;inset:0;z-index:9999;background:#FAF8F4;align-items:center;justify-content:center;font-family:'Inter',sans-serif;">
+    <div style="text-align:center;max-width:340px;padding:2rem;">
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;margin-bottom:0.5rem;">Dr. Stevie Schapiro</p>
+      <p style="font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#6B6B6B;margin-bottom:2.5rem;">Coming Soon</p>
+      <input id="gate-input" type="password" placeholder="Enter password"
+        style="width:100%;padding:0.75rem 1rem;border:1.5px solid #E4DDD5;background:#fff;font-family:'Inter',sans-serif;font-size:0.95rem;outline:none;color:#2C2C2C;margin-bottom:0.75rem;border-radius:1px;"
+        onkeydown="if(event.key==='Enter')unlock()" />
+      <p id="gate-err" style="color:#c0392b;font-size:0.8rem;min-height:1.2em;margin-bottom:0.75rem;"></p>
+      <button onclick="unlock()" style="width:100%;padding:0.85rem;background:#8BA888;color:#fff;border:none;font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;">Enter</button>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      if (sessionStorage.getItem('ds_auth') === '1') {
+        document.getElementById('gate').style.display = 'none';
+      }
+    })();
+    function unlock() {
+      var val = document.getElementById('gate-input').value;
+      if (val === 'stevie123') {
+        sessionStorage.setItem('ds_auth', '1');
+        document.getElementById('gate').style.display = 'none';
+      } else {
+        document.getElementById('gate-err').textContent = 'Incorrect password.';
+        document.getElementById('gate-input').focus();
+      }
+    }
+  </script>
 
 </body>
 </html>
