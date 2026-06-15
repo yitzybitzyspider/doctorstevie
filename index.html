@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. Stevie Schapiro — Clinical Psychologist</title>
-  <meta name="description" content="Dr. Stevie Schapiro is a clinical psychologist specializing in neuropsychological assessment, trauma, and evidence-based therapy with veterans, children, and adults." />
+  <title>Stevie Schapiro, Ph.D. — Clinical Psychologist</title>
+  <meta name="description" content="Dr. Stevie Schapiro is a clinical psychologist specializing in life transitions and trauma across the lifespan." />
   <meta name="robots" content="noindex, nofollow" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,6 +32,7 @@
       line-height: 1.7;
     }
 
+    /* NAV */
     nav {
       position: sticky;
       top: 0;
@@ -47,27 +48,29 @@
 
     .nav-logo {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       font-weight: 400;
       letter-spacing: 0.04em;
       color: var(--ink);
       text-decoration: none;
+      white-space: nowrap;
     }
 
     .nav-links {
       display: flex;
-      gap: 2.5rem;
+      gap: 1.6rem;
       list-style: none;
     }
 
     .nav-links a {
-      font-size: 0.78rem;
+      font-size: 0.72rem;
       font-weight: 500;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.09em;
       text-transform: uppercase;
       color: var(--mid);
       text-decoration: none;
       transition: color 0.2s;
+      white-space: nowrap;
     }
 
     .nav-links a:hover { color: var(--sage); }
@@ -75,6 +78,7 @@
     .nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 4px; }
     .nav-toggle span { display: block; width: 22px; height: 1.5px; background: var(--ink); margin: 5px 0; transition: 0.3s; }
 
+    /* HERO */
     .hero {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -92,10 +96,7 @@
       margin-bottom: 1.25rem;
     }
 
-    .hero-text h1 em {
-      font-style: italic;
-      color: var(--sage);
-    }
+    .hero-text h1 em { font-style: italic; color: var(--sage); }
 
     .hero-tagline {
       font-size: 0.8rem;
@@ -109,7 +110,7 @@
     .hero-text p {
       font-size: 1.05rem;
       color: var(--mid);
-      max-width: 40ch;
+      max-width: 42ch;
       margin-bottom: 2.5rem;
     }
 
@@ -124,18 +125,14 @@
       text-transform: uppercase;
       text-decoration: none;
       transition: background 0.25s, color 0.25s;
+      cursor: pointer;
     }
 
     .btn:hover { background: var(--sage); color: var(--white); }
-
     .btn-filled { background: var(--sage); color: var(--white); }
     .btn-filled:hover { background: #7a9777; border-color: #7a9777; }
 
-    .hero-image {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+    .hero-image { display: flex; justify-content: center; align-items: center; }
 
     .photo-frame {
       width: 100%;
@@ -143,55 +140,31 @@
       aspect-ratio: 3/4;
       background: var(--sage-lt);
       border-radius: 2px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 0.75rem;
-      color: var(--mid);
       overflow: hidden;
     }
 
     .photo-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
-
-    .photo-placeholder { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
-    .photo-placeholder svg { opacity: 0.45; }
-    .photo-placeholder p { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.6; }
 
     .divider { border: none; border-top: 1px solid var(--rule); margin: 0 8%; }
 
     .quote-section {
       padding: 6rem 8%;
       text-align: center;
-      max-width: 860px;
+      max-width: 900px;
       margin: 0 auto;
     }
 
     .quote-section blockquote {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.55rem, 3vw, 2.3rem);
+      font-size: clamp(1.55rem, 3vw, 2.4rem);
       font-weight: 300;
       font-style: italic;
-      line-height: 1.55;
+      line-height: 1.5;
       color: var(--ink);
-      margin-bottom: 1.25rem;
     }
 
-    .quote-section cite {
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--mid);
-      font-style: normal;
-    }
-
-    .about-section {
-      padding: 6rem 8%;
-      display: grid;
-      grid-template-columns: 1fr 1.6fr;
-      gap: 5rem;
-      align-items: start;
-    }
+    .section { padding: 6rem 8%; }
+    .section.alt { background: #F3F0EB; }
 
     .section-label {
       font-size: 0.72rem;
@@ -202,166 +175,103 @@
       margin-bottom: 1.25rem;
     }
 
-    .about-left h2 {
+    .section-head {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2rem, 3.5vw, 3rem);
       font-weight: 300;
-      line-height: 1.25;
+      line-height: 1.2;
+      margin-bottom: 2.5rem;
     }
 
-    .about-right p { color: var(--mid); margin-bottom: 1.25rem; }
-    .about-right p:last-of-type { margin-bottom: 1.75rem; }
+    .lead { font-size: 1.05rem; color: var(--mid); max-width: 70ch; margin-bottom: 1.25rem; }
+    .lead:last-of-type { margin-bottom: 0; }
 
-    .specialties-section {
-      padding: 5rem 8%;
-      background: #F3F0EB;
-    }
+    .note { font-size: 0.8rem; color: var(--sage); font-style: italic; margin-top: 0.5rem; }
 
-    .specialties-grid {
+    .about-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2px;
-      margin-top: 3rem;
+      grid-template-columns: 1fr 1.7fr;
+      gap: 4rem;
+      align-items: start;
     }
 
-    .specialty-card {
-      background: var(--white);
-      padding: 2.5rem 2rem;
-    }
-
-    .specialty-icon {
-      width: 36px;
-      height: 36px;
-      margin-bottom: 1.25rem;
-      color: var(--sage);
-    }
-
-    .specialty-card h3 {
+    .education-list { margin-top: 1rem; list-style: none; }
+    .education-list li { padding: 1rem 0; border-top: 1px solid var(--rule); }
+    .education-list li:last-child { border-bottom: 1px solid var(--rule); }
+    .education-list strong {
+      display: block;
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem;
+      font-size: 1.15rem;
       font-weight: 400;
-      margin-bottom: 0.75rem;
+      color: var(--ink);
     }
+    .education-list span { font-size: 0.85rem; color: var(--mid); }
 
-    .specialty-card p {
-      font-size: 0.88rem;
-      color: var(--mid);
-      line-height: 1.65;
-    }
+    .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .card { background: var(--white); border: 1px solid var(--rule); padding: 2.25rem 1.75rem; border-radius: 2px; }
+    .card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.45rem; font-weight: 400; }
 
-    .creds-section {
-      background: var(--ink);
-      padding: 5rem 8%;
-    }
-
-    .creds-section .section-label { color: var(--sage-lt); }
-
-    .creds-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2.5rem;
-      margin-top: 3rem;
-    }
-
-    .cred-item h3 {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.05rem;
-      font-weight: 400;
-      color: var(--white);
-      margin-bottom: 0.35rem;
-      line-height: 1.3;
-    }
-
-    .cred-item p {
-      font-size: 0.82rem;
-      color: rgba(255,255,255,0.45);
-      line-height: 1.55;
-    }
-
-    .cred-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--sage);
-      margin-bottom: 1rem;
-    }
-
-    .experience-section {
-      padding: 6rem 8%;
-    }
-
-    .timeline {
-      margin-top: 3rem;
-      border-left: 1px solid var(--rule);
-      padding-left: 2.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 3rem;
-    }
-
-    .timeline-item {
-      position: relative;
-    }
-
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -2.75rem;
-      top: 0.45rem;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--sage);
-      border: 2px solid var(--cream);
-      box-shadow: 0 0 0 1px var(--sage);
-    }
-
-    .timeline-date {
-      font-size: 0.75rem;
+    .subsection { margin-top: 3.5rem; }
+    .subhead {
+      font-size: 0.72rem;
       font-weight: 500;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.13em;
       text-transform: uppercase;
-      color: var(--sage);
-      margin-bottom: 0.35rem;
+      color: var(--ink);
+      margin-bottom: 1.25rem;
     }
 
-    .timeline-item h3 {
+    .tag-list { display: flex; flex-wrap: wrap; gap: 0.65rem; }
+    .tag {
+      border: 1px solid var(--rule);
+      background: var(--white);
+      padding: 0.5rem 1.1rem;
+      font-size: 0.85rem;
+      color: var(--ink);
+      border-radius: 2px;
+    }
+
+    .col-list { columns: 2; column-gap: 3rem; list-style: none; }
+    .col-list li {
+      padding: 0.55rem 0;
+      font-size: 0.92rem;
+      color: var(--mid);
+      break-inside: avoid;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .quotes-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-top: 1rem; }
+    .quote-card {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
-      font-weight: 400;
-      margin-bottom: 0.15rem;
-    }
-
-    .timeline-org {
-      font-size: 0.82rem;
-      color: var(--mid);
-      margin-bottom: 0.75rem;
+      font-size: 1.35rem;
+      font-weight: 300;
       font-style: italic;
+      line-height: 1.45;
+      color: var(--ink);
+      padding-left: 1.25rem;
+      border-left: 2px solid var(--sage);
     }
 
-    .timeline-item p {
-      font-size: 0.9rem;
-      color: var(--mid);
-      max-width: 65ch;
-    }
-
-    .contact-section {
-      padding: 7rem 8%;
+    .placeholder {
+      border: 1px dashed var(--rule);
+      border-radius: 2px;
+      padding: 2.5rem;
       text-align: center;
+      color: var(--mid);
+      font-size: 0.92rem;
+      background: rgba(255,255,255,0.4);
     }
 
+    .cv-box { text-align: center; max-width: 620px; margin: 0 auto; }
+
+    .contact-section { padding: 7rem 8%; text-align: center; }
     .contact-section h2 {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2.2rem, 4vw, 3.5rem);
       font-weight: 300;
       margin-bottom: 1.25rem;
     }
-
-    .contact-section p {
-      color: var(--mid);
-      max-width: 44ch;
-      margin: 0 auto 2.5rem;
-    }
+    .contact-section p { color: var(--mid); max-width: 44ch; margin: 0 auto 2.5rem; }
 
     footer {
       border-top: 1px solid var(--rule);
@@ -372,13 +282,17 @@
       font-size: 0.78rem;
       color: var(--mid);
     }
-
     footer a { color: var(--mid); text-decoration: none; }
     footer a:hover { color: var(--sage); }
 
-    @media (max-width: 900px) {
-      .creds-grid { grid-template-columns: repeat(2, 1fr); }
-      .specialties-grid { grid-template-columns: 1fr 1fr; }
+    @media (max-width: 1100px) {
+      .nav-links { gap: 1.1rem; }
+      .nav-links a { font-size: 0.68rem; letter-spacing: 0.06em; }
+    }
+
+    @media (max-width: 920px) {
+      .card-grid { grid-template-columns: 1fr; }
+      .quotes-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 768px) {
@@ -387,42 +301,41 @@
       .nav-toggle { display: block; }
       .hero { grid-template-columns: 1fr; padding: 3rem 6%; min-height: auto; gap: 2.5rem; }
       .hero-image { order: -1; }
-      .photo-frame { max-width: 200px; aspect-ratio: 1/1; border-radius: 50%; margin: 0 auto; }
-      .about-section { grid-template-columns: 1fr; gap: 2rem; padding: 4rem 6%; }
-      .specialties-grid { grid-template-columns: 1fr; }
-      .creds-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
-      .creds-section, .specialties-section, .experience-section { padding: 4rem 6%; }
+      .photo-frame { max-width: 220px; aspect-ratio: 1/1; border-radius: 50%; margin: 0 auto; }
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .col-list { columns: 1; }
+      .section { padding: 4rem 6%; }
       .contact-section, .quote-section { padding: 4rem 6%; }
       .divider { margin: 0 6%; }
       footer { flex-direction: column; gap: 0.75rem; text-align: center; }
-    }
-
-    @media (max-width: 480px) {
-      .creds-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
   <nav>
-    <a href="#" class="nav-logo">Dr. Stevie Schapiro</a>
+    <a href="#home" class="nav-logo">Stevie Schapiro, Ph.D.</a>
     <button class="nav-toggle" aria-label="Menu" onclick="this.nextElementSibling.classList.toggle('open')">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#specialties">Work</a></li>
-      <li><a href="#experience">Experience</a></li>
+      <li><a href="#clinical">Clinical Interests</a></li>
+      <li><a href="#assessment">Assessment</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#cv">CV</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
-  <section class="hero">
+  <section class="hero" id="home">
     <div class="hero-text">
       <p class="hero-tagline">Clinical Psychologist · Ph.D.</p>
-      <h1>Hi, I'm<br /><em>Dr. Stevie.</em></h1>
-      <p>I'm a clinical psychologist with a passion for neuropsychological assessment, trauma-informed care, and helping people — from veterans to kids — understand and heal their minds.</p>
-      <a href="#contact" class="btn btn-filled">Say Hello</a>
+      <h1>Stevie Schapiro,<br /><em>PhD</em></h1>
+      <p>I specialize in life transitions and trauma across the lifespan, collaboratively helping you find your pace, your path, and your people.</p>
+      <a href="#contact" class="btn btn-filled">Get in Touch</a>
     </div>
     <div class="hero-image">
       <div class="photo-frame">
@@ -435,134 +348,164 @@
 
   <section class="quote-section">
     <blockquote>
-      &ldquo;Each person's story deserves to be met with patience, curiosity, and genuine care.&rdquo;
+      &ldquo;Help you find your pace, your path, and your people.&rdquo;
     </blockquote>
-    <cite>— A guiding principle</cite>
   </section>
 
   <hr class="divider" />
 
-  <section class="about-section" id="about">
-    <div class="about-left">
-      <p class="section-label">About</p>
-      <h2>A little<br />about me</h2>
-    </div>
-    <div class="about-right">
-      <p>I'm a doctoral candidate in Clinical Psychology at Nova Southeastern University (Ph.D., 2026), currently completing my pre-doctoral internship at the U.S. Department of Veterans Affairs in St. Louis — an experience that has deepened my commitment to serving those who've given so much.</p>
-      <p>Over the past several years I've had the privilege of working with veterans, children, adolescents, and adults across a wide range of settings: VA medical centers, neuropsychology clinics, pediatric outpatient practices, and trauma-focused research labs. My training spans neuropsychological assessment, trauma-informed therapy, CBT, and evidence-based group interventions.</p>
-      <p>Before psychology found me (or I found it), I was at The George Washington University studying psychology, founding student organizations, and learning how to listen. That curiosity about people has never left me — it just got a lot more letters after its name.</p>
-      <a href="#experience" class="btn">See My Background</a>
-    </div>
-  </section>
-
-  <section class="specialties-section" id="specialties">
-    <p class="section-label">Areas of Focus</p>
-    <div class="specialties-grid">
-      <div class="specialty-card">
-        <svg class="specialty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
-          <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/>
-        </svg>
-        <h3>Neuropsychological Assessment</h3>
-        <p>Comprehensive evaluation of cognitive functioning — including memory, attention, executive function, and visuospatial abilities — for adults navigating TBI, epilepsy, Alzheimer’s, multiple sclerosis, and more.</p>
+  <section class="section" id="about">
+    <div class="about-grid">
+      <div>
+        <p class="section-label">About</p>
+        <h2 class="section-head">A little<br />about me</h2>
+        <ul class="education-list">
+          <li><strong>The Warren Alpert Medical School at Brown University</strong><span>Clinical Psychology Resident</span></li>
+          <li><strong>VA St. Louis Health Care</strong><span>Clinical Internship</span></li>
+          <li><strong>Nova Southeastern University</strong><span>Doctoral Clinical Psychology Program</span></li>
+          <li><strong>George Washington University</strong><span>B.A. Psychology</span></li>
+        </ul>
       </div>
-      <div class="specialty-card">
-        <svg class="specialty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-        </svg>
-        <h3>Trauma-Informed Care</h3>
-        <p>Extensive training in trauma assessment and treatment — including work at the VA’s Trauma Resolution Integration Program (TRIP) and research with the National Child Traumatic Stress Network.</p>
-      </div>
-      <div class="specialty-card">
-        <svg class="specialty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
-          <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
-          <path d="M17 13c2.2.8 4 2.8 4 5"/><path d="M7 13c-2.2.8-4 2.8-4 5"/>
-        </svg>
-        <h3>Pediatric &amp; Adolescent Psychology</h3>
-        <p>CBT, biofeedback, and psychoeducational group facilitation with children, teens, and families presenting with anxiety, depression, and autism spectrum disorder — through a developmental, family-centered lens.</p>
+      <div>
+        <p class="lead">Born and raised in Parkland, Florida with strong New York roots, and training across the country, as well as internationally, I am grateful to provide care who walks into my door wherever I&rsquo;ve been.</p>
+        <p class="lead">I completed my B.A. in psychology with a double minor in public health as well as human service and social justice at George Washington University in Washington, D.C. I attended Nova Southeastern University&rsquo;s doctoral clinical psychology program where I developed a [ ] lens&hellip;</p>
+        <p class="lead">I completed my clinical internship at VA St. Louis Health Care and am currently completing my postdoctoral residency at The Warren Alpert Medical School at Brown University. My training has spanned across a variety of settings including: inpatient programs, outpatient mental health clinics, private practice, primary care clinics, trauma recovery programs, and Siteman Cancer Hospital. I specialize in life transitions and trauma across the lifespan. I collaboratively work with clients to create tailored goals related to trauma, identity, relationships, aging, grief/loss, and mood disorders.</p>
+        <p class="lead">I have received comprehensive training in several evidence-based treatments including&hellip;</p>
+        <p class="note">Draft note: a few lines from Stevie are still in progress (the &ldquo;lens&rdquo; and the list of treatments) — we&rsquo;ll fill those in.</p>
       </div>
     </div>
   </section>
 
-  <section class="creds-section" id="credentials">
-    <p class="section-label">Credentials &amp; Training</p>
-    <div class="creds-grid">
-      <div class="cred-item"><div class="cred-dot"></div><h3>Ph.D. Clinical Psychology</h3><p>Nova Southeastern University · 2020–2026</p></div>
-      <div class="cred-item"><div class="cred-dot"></div><h3>B.A. Psychology</h3><p>The George Washington University · 2016–2020</p></div>
-      <div class="cred-item"><div class="cred-dot"></div><h3>VA Pre-Doctoral Intern</h3><p>U.S. Dept. of Veterans Affairs · St. Louis, 2025–present</p></div>
-      <div class="cred-item"><div class="cred-dot"></div><h3>Neuropsychology Extern</h3><p>Memorial Neuroscience Institute (under Dr. Madily Broz) · 2024–2025</p></div>
+  <section class="section alt" id="clinical">
+    <p class="section-label">Clinical Interests</p>
+    <h2 class="section-head">What I work with</h2>
+    <div class="card-grid">
+      <div class="card"><h3>Trauma and PTSD</h3></div>
+      <div class="card"><h3>Grief and Bereavement</h3></div>
+      <div class="card"><h3>Life Transitions and Adjustment</h3></div>
+    </div>
+    <div class="subsection">
+      <p class="subhead">Populations Worked With</p>
+      <div class="tag-list">
+        <span class="tag">Veterans</span>
+        <span class="tag">Children ages 4 to 18</span>
+        <span class="tag">Older Adults</span>
+      </div>
+    </div>
+    <div class="subsection">
+      <p class="subhead">Therapeutic Modalities</p>
+      <ul class="col-list">
+        <li>Acceptance and Commitment Therapy (ACT)</li>
+        <li>CBT-i</li>
+        <li>Cognitive Behavioral Therapy</li>
+        <li>Cognitive Processing Therapy</li>
+        <li>Dialectical Behavior Therapy</li>
+        <li>Interpersonal Psychotherapy (IPT)</li>
+        <li>Motivational Interviewing (MI)</li>
+        <li>Narrative Exposure Therapy</li>
+        <li>Positive Psychology</li>
+        <li>Prolonged Exposure</li>
+        <li>Trauma Focused-Cognitive Behavioral Therapy</li>
+        <li>Written Exposure Therapy</li>
+      </ul>
     </div>
   </section>
 
-  <section class="experience-section" id="experience">
-    <p class="section-label">Experience</p>
-    <div class="timeline">
-      <div class="timeline-item">
-        <p class="timeline-date">Jul 2025 – Present</p>
-        <h3>Pre-Doctoral Intern</h3>
-        <p class="timeline-org">U.S. Department of Veterans Affairs · St. Louis, MO</p>
-        <p>Providing clinical services to veterans as part of an APA-accredited internship program at the VA.</p>
-      </div>
-      <div class="timeline-item">
-        <p class="timeline-date">Aug 2024 – May 2025</p>
-        <h3>Psychology Extern — Neuropsychology</h3>
-        <p class="timeline-org">Memorial Neuroscience Institute · Hollywood, FL (under Dr. Madily Broz)</p>
-        <p>Administered and scored a full battery of neuropsychological assessments (intellectual functioning, memory, executive function, attention, motor skills, personality). Interviewed patients and wrote integrated reports for adults with epilepsy, TBI, Alzheimer’s, MS, and vascular disease. Assisted in WADA test administration and attended interdisciplinary epilepsy case conferences.</p>
-      </div>
-      <div class="timeline-item">
-        <p class="timeline-date">Aug 2023 – May 2025</p>
-        <h3>Psychology Extern — Pediatric</h3>
-        <p class="timeline-org">Pediatric Psychology Associates, South Florida · Miami-Fort Lauderdale (under Drs. Carella, Migoya &amp; del Castillo)</p>
-        <p>Co-facilitated the SURF psychoeducational group (ages 6–22) targeting self-regulation, social-emotional skills, and executive functioning. Conducted cognitive and achievement evaluations (KTEA-3, WJ-IV, VMI). Provided individual CBT with biofeedback for children, adolescents, and families presenting with anxiety, depression, and autism spectrum disorder.</p>
-      </div>
-      <div class="timeline-item">
-        <p class="timeline-date">Aug 2022 – Jun 2025</p>
-        <h3>Childhood Trauma &amp; Bereavement Lab Coordinator</h3>
-        <p class="timeline-org">Nova Southeastern University · under Dr. Christopher Layne, PhD</p>
-        <p>Coordinated lab operations and contributed to development of the Core Curriculum on Childhood Trauma (CCCT) for the National Child Traumatic Stress Network.</p>
-      </div>
-      <div class="timeline-item">
-        <p class="timeline-date">May 2022 – Sep 2024</p>
-        <h3>Psychometrician</h3>
-        <p class="timeline-org">Center for Psychological Growth and Wellness · under Dr. Lisa Saponaro</p>
-        <p>Administered and scored psychological and neuropsychological assessments in an outpatient private practice setting.</p>
-      </div>
-      <div class="timeline-item">
-        <p class="timeline-date">Aug 2021 – Aug 2022</p>
-        <h3>Psychology Extern — VA</h3>
-        <p class="timeline-org">Bruce W. Carter VA Medical Center · Miami-Fort Lauderdale (under Dr. Yesenia Rivera)</p>
-        <p>Delivered psychoeducation, individual therapy, group therapy, and psychological assessments at the Miami VA’s Community Living Center.</p>
-      </div>
-      <div class="timeline-item">
-        <p class="timeline-date">Aug 2021 – Sep 2024</p>
-        <h3>Teaching Assistant</h3>
-        <p class="timeline-org">Nova Southeastern University</p>
-        <p>Supported doctoral-level graduate coursework — including instruction on APA 7 guidelines — and provided written feedback on student assignments.</p>
-      </div>
+  <section class="section" id="assessment">
+    <p class="section-label">Assessment Experience</p>
+    <h2 class="section-head">Assessment</h2>
+    <div class="tag-list">
+      <span class="tag">Cognitive</span>
+      <span class="tag">Personality</span>
+      <span class="tag">Diagnostic Clarification</span>
+      <span class="tag">Neuropsychological Screening</span>
     </div>
+  </section>
+
+  <section class="section alt" id="research">
+    <p class="section-label">Research &amp; Publications</p>
+    <h2 class="section-head">Research and Publications</h2>
+    <div class="subsection" style="margin-top:0;">
+      <p class="subhead">Publications</p>
+      <div class="placeholder">Coming soon.</div>
+    </div>
+    <div class="subsection">
+      <p class="subhead">Presentations</p>
+      <div class="placeholder">Coming soon.</div>
+    </div>
+    <div class="subsection">
+      <p class="subhead">Posters</p>
+      <div class="placeholder">Coming soon.</div>
+    </div>
+  </section>
+
+  <section class="section" id="teaching">
+    <p class="section-label">Teaching &amp; Supervision</p>
+    <h2 class="section-head">Teaching and Supervision</h2>
+    <div class="placeholder">Coming soon.</div>
+  </section>
+
+  <section class="section alt" id="cv">
+    <div class="cv-box">
+      <p class="section-label">Curriculum Vitae</p>
+      <h2 class="section-head">My CV</h2>
+      <p class="lead" style="margin:0 auto 2.5rem;">Download my full curriculum vitae for a complete look at my training, clinical experience, research, and service.</p>
+      <a href="CV%202026_SS.pdf" class="btn btn-filled" download>Download CV (PDF)</a>
+    </div>
+  </section>
+
+  <section class="section" id="words">
+    <p class="section-label">In My Words</p>
+    <h2 class="section-head">Things I believe</h2>
+    <div class="quotes-grid">
+      <p class="quote-card">We are a summation of our experiences.</p>
+      <p class="quote-card">You are what you consume: from what you eat, observe, listen to.</p>
+      <p class="quote-card">Help you find your pace, your path, and your people.</p>
+      <p class="quote-card">Sometimes the bravest and most important thing you can do is just show up.</p>
+      <p class="quote-card">Sometimes we have to rewire our brain.</p>
+      <p class="quote-card">Practice makes progress.</p>
+      <p class="quote-card">Use adversity for awakening.</p>
+      <p class="quote-card">You must be the director, producer, and actor to your own life.</p>
+    </div>
+  </section>
+
+  <section class="section alt" id="service">
+    <p class="section-label">Professional Service</p>
+    <h2 class="section-head">Service &amp; community</h2>
+    <div class="tag-list">
+      <span class="tag">APA</span>
+      <span class="tag">Diversity Initiatives</span>
+      <span class="tag">Professional Organizations</span>
+      <span class="tag">Community Outreach</span>
+    </div>
+    <p class="lead" style="margin-top:2rem;">Provided services in Jordan.</p>
+  </section>
+
+  <section class="section" id="future">
+    <p class="section-label">Future Practice</p>
+    <h2 class="section-head">Looking ahead</h2>
+    <p class="lead">I anticipate seeking licensed psychology opportunities in [ ] settings beginning September 2027.</p>
   </section>
 
   <hr class="divider" />
 
   <section class="contact-section" id="contact">
     <p class="section-label">Contact</p>
-    <h2>Let’s connect.</h2>
-    <p>Whether you have a question, a collaboration idea, or just want to say hello — I’d love to hear from you.</p>
+    <h2>Let&rsquo;s connect.</h2>
+    <p>Whether you have a question, a referral, or just want to say hello — I&rsquo;d love to hear from you.</p>
     <a href="mailto:stevie@doctorstevie.com" class="btn btn-filled">stevie@doctorstevie.com</a>
   </section>
 
   <footer>
-    <span>&copy; 2026 Dr. Stevie Schapiro, Ph.D.</span>
+    <span>&copy; 2026 Stevie Schapiro, Ph.D.</span>
     <a href="https://www.linkedin.com/in/stevie-schapiro-ms-982208137/" target="_blank" rel="noopener">LinkedIn</a>
   </footer>
 
-  <!-- PASSWORD GATE -->
   <div id="gate" style="display:flex;position:fixed;inset:0;z-index:9999;background:#FAF8F4;align-items:center;justify-content:center;font-family:'Inter',sans-serif;">
     <div style="text-align:center;max-width:340px;padding:2rem;">
-      <p style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;margin-bottom:0.5rem;">Dr. Stevie Schapiro</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;margin-bottom:0.5rem;">Stevie Schapiro, Ph.D.</p>
       <p style="font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;color:#6B6B6B;margin-bottom:2.5rem;">Coming Soon</p>
-      <input id="gate-input" type="password" placeholder="Enter password"
-        style="width:100%;padding:0.75rem 1rem;border:1.5px solid #E4DDD5;background:#fff;font-family:'Inter',sans-serif;font-size:0.95rem;outline:none;color:#2C2C2C;margin-bottom:0.75rem;border-radius:1px;"
-        onkeydown="if(event.key==='Enter')unlock()" />
+      <input id="gate-input" type="password" placeholder="Enter password" style="width:100%;padding:0.75rem 1rem;border:1.5px solid #E4DDD5;background:#fff;font-family:'Inter',sans-serif;font-size:0.95rem;outline:none;color:#2C2C2C;margin-bottom:0.75rem;border-radius:1px;" onkeydown="if(event.key==='Enter')unlock()" />
       <p id="gate-err" style="color:#c0392b;font-size:0.8rem;min-height:1.2em;margin-bottom:0.75rem;"></p>
       <button onclick="unlock()" style="width:100%;padding:0.85rem;background:#8BA888;color:#fff;border:none;font-family:'Inter',sans-serif;font-size:0.78rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;">Enter</button>
     </div>
