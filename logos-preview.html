@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Logo Options — Stevie Schapiro</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --cream:#FAF8F4; --sage:#8BA888; --sage-lt:#C8D9C6;
+      --ink:#2C2C2C; --mid:#6B6B6B; --rule:#E4DDD5; --white:#FFF;
+    }
+    body { font-family:'Inter',sans-serif; background:var(--cream); color:var(--ink); line-height:1.6; padding:3rem 6%; }
+    .page-title { font-family:'Cormorant Garamond',serif; font-size:2.5rem; font-weight:300; margin-bottom:0.5rem; }
+    .page-sub { color:var(--mid); margin-bottom:3rem; max-width:60ch; }
+    .option {
+      background:var(--white); border:1px solid var(--rule); border-radius:3px;
+      padding:2.5rem; margin-bottom:2rem;
+    }
+    .option-label {
+      font-size:0.72rem; font-weight:500; letter-spacing:0.13em; text-transform:uppercase;
+      color:var(--sage); margin-bottom:0.35rem;
+    }
+    .option-desc { color:var(--mid); font-size:0.9rem; margin-bottom:2rem; max-width:62ch; }
+
+    .mock-nav {
+      display:flex; align-items:center; justify-content:space-between;
+      border:1px solid var(--rule); border-radius:2px;
+      padding:0 1.5rem; height:60px; background:var(--cream); margin-bottom:1.5rem;
+    }
+    .mock-links { display:flex; gap:1.4rem; list-style:none; }
+    .mock-links span { font-size:0.66rem; font-weight:500; letter-spacing:0.09em; text-transform:uppercase; color:var(--mid); }
+
+    .logo-lockup { display:flex; align-items:center; gap:0.6rem; text-decoration:none; }
+    .logo-word {
+      font-family:'Cormorant Garamond',serif; font-size:1.2rem; font-weight:400;
+      letter-spacing:0.03em; color:var(--ink); white-space:nowrap;
+    }
+    .logo-word small { display:block; font-size:0.55rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--sage); font-family:'Inter',sans-serif; margin-top:2px; }
+
+    .showcase {
+      display:flex; align-items:center; justify-content:center; gap:1rem;
+      background:var(--cream); border:1px dashed var(--rule); border-radius:2px;
+      padding:2.5rem; min-height:140px;
+    }
+    .showcase.dark { background:var(--ink); }
+    .showcase.dark .logo-word { color:var(--white); }
+    .showcase .logo-word { font-size:1.9rem; }
+    .showcase .logo-word small { font-size:0.7rem; }
+
+    .swatch-row { display:flex; gap:2rem; margin-top:1.25rem; flex-wrap:wrap; }
+    .swatch-row > div { flex:1; min-width:240px; }
+  </style>
+</head>
+<body>
+
+  <h1 class="page-title">Logo Options</h1>
+  <p class="page-sub">A few directions for Stevie's mark, all built to match the site (sage green + Cormorant Garamond serif). Each shows how it'd look in the nav bar and on its own. Nothing here is on the live site — just for picking. Low priority, no rush.</p>
+
+  <div class="option">
+    <p class="option-label">Option 1 — "S" Monogram in a Circle</p>
+    <p class="option-desc">Classic, timeless, professional. A serif "S" inside a thin ring. Works as a favicon and a social avatar too.</p>
+    <div class="mock-nav">
+      <a href="#" class="logo-lockup">
+        <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+          <circle cx="19" cy="19" r="18" stroke="#8BA888" stroke-width="1.2"/>
+          <text x="19" y="25.5" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="22" fill="#2C2C2C">S</text>
+        </svg>
+        <span class="logo-word">Stevie Schapiro</span>
+      </a>
+      <ul class="mock-links"><span>About</span><span>Clinical</span><span>CV</span><span>Contact</span></ul>
+    </div>
+    <div class="swatch-row">
+      <div class="showcase">
+        <svg width="64" height="64" viewBox="0 0 38 38" fill="none">
+          <circle cx="19" cy="19" r="18" stroke="#8BA888" stroke-width="1.2"/>
+          <text x="19" y="25.5" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="22" fill="#2C2C2C">S</text>
+        </svg>
+      </div>
+      <div class="showcase dark">
+        <svg width="64" height="64" viewBox="0 0 38 38" fill="none">
+          <circle cx="19" cy="19" r="18" stroke="#C8D9C6" stroke-width="1.2"/>
+          <text x="19" y="25.5" text-anchor="middle" font-family="Cormorant Garamond, serif" font-size="22" fill="#FFFFFF">S</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="option">
+    <p class="option-label">Option 2 — Sage Sprig + Wordmark</p>
+    <p class="option-desc">A small leaf/sprig for growth and healing — warm and very common in thoughtful therapy branding. Pairs with her name and credential.</p>
+    <div class="mock-nav">
+      <a href="#" class="logo-lockup">
+        <svg width="30" height="38" viewBox="0 0 30 38" fill="none" stroke="#8BA888" stroke-width="1.4" stroke-linecap="round">
+          <path d="M15 36 V12"/>
+          <path d="M15 20 C9 18 6 13 6 8 C12 9 15 13 15 18"/>
+          <path d="M15 16 C21 14 24 9 24 4 C18 5 15 9 15 14"/>
+        </svg>
+        <span class="logo-word">Stevie Schapiro<small>Ph.D.</small></span>
+      </a>
+      <ul class="mock-links"><span>About</span><span>Clinical</span><span>CV</span><span>Contact</span></ul>
+    </div>
+    <div class="swatch-row">
+      <div class="showcase">
+        <svg width="44" height="56" viewBox="0 0 30 38" fill="none" stroke="#8BA888" stroke-width="1.4" stroke-linecap="round">
+          <path d="M15 36 V12"/>
+          <path d="M15 20 C9 18 6 13 6 8 C12 9 15 13 15 18"/>
+          <path d="M15 16 C21 14 24 9 24 4 C18 5 15 9 15 14"/>
+        </svg>
+        <span class="logo-word">Stevie Schapiro<small>Ph.D.</small></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="option">
+    <p class="option-label">Option 3 — The Path Mark</p>
+    <p class="option-desc">A winding line that ties directly to her words: "help you find your pace, your path, and your people." Subtle and meaningful.</p>
+    <div class="mock-nav">
+      <a href="#" class="logo-lockup">
+        <svg width="38" height="38" viewBox="0 0 38 38" fill="none" stroke="#8BA888" stroke-width="1.5" stroke-linecap="round">
+          <path d="M8 32 C8 22 30 22 30 14 C30 8 22 8 22 6"/>
+          <circle cx="22" cy="6" r="2.2" fill="#8BA888" stroke="none"/>
+        </svg>
+        <span class="logo-word">Stevie Schapiro</span>
+      </a>
+      <ul class="mock-links"><span>About</span><span>Clinical</span><span>CV</span><span>Contact</span></ul>
+    </div>
+    <div class="swatch-row">
+      <div class="showcase">
+        <svg width="60" height="60" viewBox="0 0 38 38" fill="none" stroke="#8BA888" stroke-width="1.5" stroke-linecap="round">
+          <path d="M8 32 C8 22 30 22 30 14 C30 8 22 8 22 6"/>
+          <circle cx="22" cy="6" r="2.2" fill="#8BA888" stroke="none"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="option">
+    <p class="option-label">Option 4 — Wordmark Only</p>
+    <p class="option-desc">No icon at all — just her name set beautifully with the credential beneath. Understated and confident; what many established clinicians use.</p>
+    <div class="mock-nav">
+      <a href="#" class="logo-lockup">
+        <span class="logo-word" style="font-size:1.35rem;">Stevie Schapiro<small>Clinical Psychologist · Ph.D.</small></span>
+      </a>
+      <ul class="mock-links"><span>About</span><span>Clinical</span><span>CV</span><span>Contact</span></ul>
+    </div>
+    <div class="swatch-row">
+      <div class="showcase">
+        <span class="logo-word" style="font-size:2.2rem;">Stevie Schapiro<small>Clinical Psychologist · Ph.D.</small></span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
