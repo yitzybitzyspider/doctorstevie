@@ -145,7 +145,16 @@
 
     .photo-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-    .divider { border: none; border-top: 1px solid var(--rule); margin: 0 8%; }
+    .divider {
+      border: none;
+      height: 16px;
+      margin: 0.5rem 8%;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='16' viewBox='0 0 40 16'%3E%3Cpath d='M0 8 Q10 1 20 8 T40 8' fill='none' stroke='%238BA888' stroke-width='1.1'/%3E%3C/svg%3E");
+      background-repeat: repeat-x;
+      background-position: center;
+      background-size: 40px 16px;
+      opacity: 0.5;
+    }
 
     .quote-section {
       padding: 6rem 8%;
@@ -305,6 +314,61 @@
     }
     .crisis-note strong { color: var(--sage); font-weight: 500; }
 
+    /* EQUALIZER MARK */
+    .equalizer { display: flex; align-items: flex-end; gap: 4px; height: 22px; margin-bottom: 1.1rem; }
+    .equalizer span { width: 3px; height: 8px; background: var(--sage); border-radius: 2px; }
+
+    /* CARD HOVER */
+    .card { transition: transform 0.5s cubic-bezier(.2,.6,.2,1), box-shadow 0.45s ease, border-color 0.45s ease, opacity 0.7s ease; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 14px 34px rgba(44,44,44,0.08); border-color: var(--sage-lt); }
+    .card:hover .card-tags { color: #7a9777; }
+
+    /* SCROLL REVEAL + MOTION (motion-safe only) */
+    @media (prefers-reduced-motion: no-preference) {
+      .anim .hero-text > *,
+      .anim .section-label,
+      .anim .section-head,
+      .anim .lead,
+      .anim .callout,
+      .anim .education-list,
+      .anim .subhead,
+      .anim .tag-list,
+      .anim .col-list,
+      .anim .quote-section blockquote,
+      .anim .contact-section > *,
+      .anim .photo-frame {
+        transition: opacity 0.7s ease, transform 0.6s cubic-bezier(.2,.6,.2,1);
+      }
+      .anim .hero-text > *:not(.in),
+      .anim .section-label:not(.in),
+      .anim .section-head:not(.in),
+      .anim .lead:not(.in),
+      .anim .callout:not(.in),
+      .anim .education-list:not(.in),
+      .anim .subhead:not(.in),
+      .anim .tag-list:not(.in),
+      .anim .col-list:not(.in),
+      .anim .quote-section blockquote:not(.in),
+      .anim .contact-section > *:not(.in),
+      .anim .photo-frame:not(.in),
+      .anim .card:not(.in) {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      .anim .card:nth-child(2) { transition-delay: 0.08s; }
+      .anim .card:nth-child(3) { transition-delay: 0.16s; }
+      .anim .card:nth-child(5) { transition-delay: 0.08s; }
+      .anim .card:nth-child(6) { transition-delay: 0.16s; }
+
+      .equalizer span { animation: eq 1.7s ease-in-out infinite; }
+      .equalizer span:nth-child(1) { animation-delay: -0.2s; }
+      .equalizer span:nth-child(2) { animation-delay: -0.9s; }
+      .equalizer span:nth-child(3) { animation-delay: -0.4s; }
+      .equalizer span:nth-child(4) { animation-delay: -1.2s; }
+      .equalizer span:nth-child(5) { animation-delay: -0.6s; }
+    }
+    @keyframes eq { 0%, 100% { height: 6px; } 50% { height: 20px; } }
+
     footer {
       border-top: 1px solid var(--rule);
       padding: 2.5rem 8%;
@@ -341,6 +405,7 @@
       footer { flex-direction: column; gap: 0.75rem; text-align: center; }
     }
   </style>
+  <script>document.documentElement.classList.add('anim');</script>
 </head>
 <body>
 
@@ -361,6 +426,7 @@
 
   <section class="hero" id="home">
     <div class="hero-text">
+      <div class="equalizer" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
       <p class="hero-tagline">Clinical Psychologist · Ph.D.</p>
       <h1>Stevie Schapiro,<br /><em>PhD</em></h1>
       <p>I am a clinical psychologist working alongside people across the lifespan through trauma, grief, mood, and life&rsquo;s harder transitions. The work is collaborative, grounded in evidence, and tailored to you.</p>
@@ -546,6 +612,25 @@
         document.getElementById('gate-input').focus();
       }
     }
+
+    /* Scroll-reveal: gently fade content up as it enters view */
+    (function() {
+      var sel = '.hero-text > *, .section-label, .section-head, .lead, .callout, .education-list, .card, .subhead, .tag-list, .col-list, .quote-section blockquote, .contact-section > *, .photo-frame';
+      var els = document.querySelectorAll(sel);
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(function(el) { el.classList.add('in'); });
+        return;
+      }
+      var io = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('in');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      els.forEach(function(el) { io.observe(el); });
+    })();
   </script>
 
 </body>
