@@ -20,6 +20,8 @@
       --mid:     #6B6B6B;
       --rule:    #E4DDD5;
       --white:   #FFFFFF;
+      --maxw:    1240px;
+      --pad-x:   max(8%, calc((100% - 1240px) / 2));
     }
 
     html { scroll-behavior: smooth; }
@@ -39,7 +41,7 @@
       z-index: 100;
       background: var(--cream);
       border-bottom: 1px solid var(--rule);
-      padding: 0 5%;
+      padding: 0 max(5%, calc((100% - var(--maxw)) / 2));
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -85,7 +87,7 @@
       min-height: calc(100vh - 64px);
       align-items: center;
       gap: 4rem;
-      padding: 6rem 8%;
+      padding: 6rem var(--pad-x);
     }
 
     .hero-text h1 {
@@ -145,10 +147,12 @@
 
     .photo-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-    .divider {
+    .divider { border: none; border-top: 1px solid var(--rule); margin: 0 var(--pad-x); }
+
+    .divider-wave {
       border: none;
       height: 16px;
-      margin: 0.5rem 8%;
+      margin: 0.5rem var(--pad-x);
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='16' viewBox='0 0 40 16'%3E%3Cpath d='M0 8 Q10 1 20 8 T40 8' fill='none' stroke='%238BA888' stroke-width='1.1'/%3E%3C/svg%3E");
       background-repeat: repeat-x;
       background-position: center;
@@ -184,7 +188,7 @@
       color: var(--sage);
     }
 
-    .section { padding: 6rem 8%; }
+    .section { padding: 6rem var(--pad-x); }
     .section.alt { background: #F3F0EB; }
 
     .section-label {
@@ -295,7 +299,7 @@
       border-bottom: 1px solid var(--rule);
     }
 
-    .contact-section { padding: 7rem 8%; text-align: center; }
+    .contact-section { padding: 7rem var(--pad-x); text-align: center; }
     .contact-section h2 {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2.2rem, 4vw, 3.5rem);
@@ -314,14 +318,13 @@
     }
     .crisis-note strong { color: var(--sage); font-weight: 500; }
 
-    /* EQUALIZER MARK */
-    .equalizer { display: flex; align-items: flex-end; gap: 4px; height: 22px; margin-bottom: 1.1rem; }
-    .equalizer span { width: 3px; height: 8px; background: var(--sage); border-radius: 2px; }
-
     /* CARD HOVER */
     .card { transition: transform 0.5s cubic-bezier(.2,.6,.2,1), box-shadow 0.45s ease, border-color 0.45s ease, opacity 0.7s ease; }
     .card:hover { transform: translateY(-5px); box-shadow: 0 14px 34px rgba(44,44,44,0.08); border-color: var(--sage-lt); }
     .card:hover .card-tags { color: #7a9777; }
+
+    /* QUOTE READ-OUT */
+    .quote-word { display: inline-block; }
 
     /* SCROLL REVEAL + MOTION (motion-safe only) */
     @media (prefers-reduced-motion: no-preference) {
@@ -334,7 +337,6 @@
       .anim .subhead,
       .anim .tag-list,
       .anim .col-list,
-      .anim .quote-section blockquote,
       .anim .contact-section > *,
       .anim .photo-frame {
         transition: opacity 0.7s ease, transform 0.6s cubic-bezier(.2,.6,.2,1);
@@ -348,7 +350,6 @@
       .anim .subhead:not(.in),
       .anim .tag-list:not(.in),
       .anim .col-list:not(.in),
-      .anim .quote-section blockquote:not(.in),
       .anim .contact-section > *:not(.in),
       .anim .photo-frame:not(.in),
       .anim .card:not(.in) {
@@ -360,18 +361,14 @@
       .anim .card:nth-child(5) { transition-delay: 0.08s; }
       .anim .card:nth-child(6) { transition-delay: 0.16s; }
 
-      .equalizer span { animation: eq 1.7s ease-in-out infinite; }
-      .equalizer span:nth-child(1) { animation-delay: -0.2s; }
-      .equalizer span:nth-child(2) { animation-delay: -0.9s; }
-      .equalizer span:nth-child(3) { animation-delay: -0.4s; }
-      .equalizer span:nth-child(4) { animation-delay: -1.2s; }
-      .equalizer span:nth-child(5) { animation-delay: -0.6s; }
+      .anim .quote-section blockquote:not(.ready) { opacity: 0; }
+      .quote-word { opacity: 0; transform: translateY(10px); transition: opacity 0.55s ease, transform 0.55s ease; }
+      .quote-word.in { opacity: 1; transform: none; }
     }
-    @keyframes eq { 0%, 100% { height: 6px; } 50% { height: 20px; } }
 
     footer {
       border-top: 1px solid var(--rule);
-      padding: 2.5rem 8%;
+      padding: 2.5rem var(--pad-x);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -401,7 +398,7 @@
       .col-list { columns: 1; }
       .section { padding: 4rem 6%; }
       .contact-section, .quote-section { padding: 4rem 6%; }
-      .divider { margin: 0 6%; }
+      .divider, .divider-wave { margin: 0 6%; }
       footer { flex-direction: column; gap: 0.75rem; text-align: center; }
     }
   </style>
@@ -426,7 +423,6 @@
 
   <section class="hero" id="home">
     <div class="hero-text">
-      <div class="equalizer" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
       <p class="hero-tagline">Clinical Psychologist · Ph.D.</p>
       <h1>Stevie Schapiro,<br /><em>PhD</em></h1>
       <p>I am a clinical psychologist working alongside people across the lifespan through trauma, grief, mood, and life&rsquo;s harder transitions. The work is collaborative, grounded in evidence, and tailored to you.</p>
@@ -546,6 +542,8 @@
     </div>
   </section>
 
+  <hr class="divider-wave" />
+
   <section class="section alt" id="essence">
     <p class="section-label">Beyond the Therapy Room</p>
     <h2 class="section-head">The soundtrack of your life</h2>
@@ -555,7 +553,7 @@
     <p class="lead">My work is rooted in a few quiet convictions. That courage and vulnerability are where real change begins. That dignity belongs to every person, in every chapter of a life. That we each hold the capacity to grow, to make meaning of where we have been, and to write the next verse of who we are becoming.</p>
   </section>
 
-  <hr class="divider" />
+  <hr class="divider-wave" />
 
   <section class="quote-section">
     <blockquote>
@@ -613,23 +611,71 @@
       }
     }
 
-    /* Scroll-reveal: gently fade content up as it enters view */
+    /* Scroll-reveal, word-by-word quotes, and gentle hero parallax */
     (function() {
-      var sel = '.hero-text > *, .section-label, .section-head, .lead, .callout, .education-list, .card, .subhead, .tag-list, .col-list, .quote-section blockquote, .contact-section > *, .photo-frame';
-      var els = document.querySelectorAll(sel);
-      if (!('IntersectionObserver' in window)) {
+      var hasIO = ('IntersectionObserver' in window);
+
+      /* Fade content up as it enters view */
+      var els = document.querySelectorAll('.hero-text > *, .section-label, .section-head, .lead, .callout, .education-list, .card, .subhead, .tag-list, .col-list, .contact-section > *, .photo-frame');
+      if (!hasIO) {
         els.forEach(function(el) { el.classList.add('in'); });
-        return;
+      } else {
+        var io = new IntersectionObserver(function(entries) {
+          entries.forEach(function(e) {
+            if (e.isIntersecting) {
+              e.target.classList.add('in');
+              io.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+        els.forEach(function(el) { io.observe(el); });
       }
-      var io = new IntersectionObserver(function(entries) {
-        entries.forEach(function(e) {
-          if (e.isIntersecting) {
-            e.target.classList.add('in');
-            io.unobserve(e.target);
-          }
+
+      /* Quotes that read out word by word */
+      var quotes = document.querySelectorAll('.quote-section blockquote');
+      quotes.forEach(function(bq) {
+        var words = bq.textContent.trim().split(/\s+/);
+        bq.textContent = '';
+        words.forEach(function(w, i) {
+          var span = document.createElement('span');
+          span.className = 'quote-word';
+          span.textContent = w;
+          span.style.transitionDelay = (i * 0.06) + 's';
+          bq.appendChild(span);
+          if (i < words.length - 1) { bq.appendChild(document.createTextNode(' ')); }
         });
-      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-      els.forEach(function(el) { io.observe(el); });
+        bq.classList.add('ready');
+      });
+      if (hasIO) {
+        var qio = new IntersectionObserver(function(entries) {
+          entries.forEach(function(e) {
+            if (e.isIntersecting) {
+              e.target.querySelectorAll('.quote-word').forEach(function(w) { w.classList.add('in'); });
+              qio.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.4 });
+        quotes.forEach(function(bq) { qio.observe(bq); });
+      } else {
+        document.querySelectorAll('.quote-word').forEach(function(w) { w.classList.add('in'); });
+      }
+
+      /* Gentle parallax on the hero portrait */
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var photo = document.querySelector('.hero-image');
+      if (photo && !reduce) {
+        var ticking = false;
+        window.addEventListener('scroll', function() {
+          if (!ticking) {
+            window.requestAnimationFrame(function() {
+              var y = window.pageYOffset;
+              if (y < 1000) { photo.style.transform = 'translateY(' + Math.min(y * 0.08, 60) + 'px)'; }
+              ticking = false;
+            });
+            ticking = true;
+          }
+        }, { passive: true });
+      }
     })();
   </script>
 
