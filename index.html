@@ -611,7 +611,7 @@
       }
     }
 
-    /* Scroll-reveal, word-by-word quotes, and gentle hero parallax */
+    /* Scroll-reveal and word-by-word quotes */
     (function() {
       var hasIO = ('IntersectionObserver' in window);
 
@@ -658,23 +658,6 @@
         quotes.forEach(function(bq) { qio.observe(bq); });
       } else {
         document.querySelectorAll('.quote-word').forEach(function(w) { w.classList.add('in'); });
-      }
-
-      /* Gentle parallax on the hero portrait */
-      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      var photo = document.querySelector('.hero-image');
-      if (photo && !reduce) {
-        var ticking = false;
-        window.addEventListener('scroll', function() {
-          if (!ticking) {
-            window.requestAnimationFrame(function() {
-              var y = window.pageYOffset;
-              if (y < 1000) { photo.style.transform = 'translateY(' + Math.min(y * 0.08, 60) + 'px)'; }
-              ticking = false;
-            });
-            ticking = true;
-          }
-        }, { passive: true });
       }
     })();
   </script>
